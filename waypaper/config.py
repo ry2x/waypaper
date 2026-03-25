@@ -173,7 +173,7 @@ class Config:
         """Check if the config parameters are valid and correct them if needed"""
 
         # Check validity of general options:
-        if self.backend not in BACKEND_OPTIONS:
+        if self.backend not in BACKEND_OPTIONS or self.backend not in self.installed_backends:
             self.backend = self.installed_backends[-1]
         if self.sort_option not in SORT_OPTIONS:
             self.sort_option = SORT_OPTIONS[0]
